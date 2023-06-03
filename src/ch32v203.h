@@ -2715,21 +2715,21 @@ namespace ETHERNET_DMA
     };
     struct DMASR : PackedRegister<ETHERNET_DMA_pack, RegBitSize::b32, 20 * 8> // Ethernet DMA status register
     {
-        using TS = Field<DMASR, 1, 0, read_only>;         // Transmit status
-        using TPSS = Field<DMASR, 1, 1, read_only>;       // Transmit process stopped
-        using TBUS = Field<DMASR, 1, 2, read_only>;       // Transmit buffer unavailable
-        using TJTS = Field<DMASR, 1, 3, read_only>;       // Transmit jabber timeout
-        using ROS = Field<DMASR, 1, 4, read_only>;        // Receive overflow status
-        using TUS = Field<DMASR, 1, 5, read_only>;        // Transmit underflow status
-        using RS = Field<DMASR, 1, 6, read_only>;         // Receive status
-        using RBUS = Field<DMASR, 1, 7, read_only>;       // Receive buffer unavailable
-        using RPSS = Field<DMASR, 1, 8, read_only>;       // Receive process stopped
-        using PWTS = Field<DMASR, 1, 9, read_only>;       // Receive watchdog timeout
-        using ETS = Field<DMASR, 1, 10, read_only>;       // Early transmit status
-        using FBES = Field<DMASR, 1, 13, read_only>;      // Fatal bus error status
-        using ERS = Field<DMASR, 1, 14, read_only>;       // Early receive status
-        using AIS = Field<DMASR, 1, 15, read_only>;       // Abnormal interrupt summary
-        using NIS = Field<DMASR, 1, 16, read_only>;       // Normal interrupt summary
+        using TS = Field<DMASR, 1, 0, read_only>;    // Transmit status
+        using TPSS = Field<DMASR, 1, 1, read_only>;  // Transmit process stopped
+        using TBUS = Field<DMASR, 1, 2, read_only>;  // Transmit buffer unavailable
+        using TJTS = Field<DMASR, 1, 3, read_only>;  // Transmit jabber timeout
+        using ROS = Field<DMASR, 1, 4, read_only>;   // Receive overflow status
+        using TUS = Field<DMASR, 1, 5, read_only>;   // Transmit underflow status
+        using RS = Field<DMASR, 1, 6, read_only>;    // Receive status
+        using RBUS = Field<DMASR, 1, 7, read_only>;  // Receive buffer unavailable
+        using RPSS = Field<DMASR, 1, 8, read_only>;  // Receive process stopped
+        using PWTS = Field<DMASR, 1, 9, read_only>;  // Receive watchdog timeout
+        using ETS = Field<DMASR, 1, 10, read_only>;  // Early transmit status
+        using FBES = Field<DMASR, 1, 13, read_only>; // Fatal bus error status
+        using ERS = Field<DMASR, 1, 14, read_only>;  // Early receive status
+        using AIS = Field<DMASR, 1, 15, read_only>;  // Abnormal interrupt summary
+        using NIS = Field<DMASR, 1, 16, read_only>;  // Normal interrupt summary
         using RPS = Field<DMASR, 3, 17, read_only>;  // Receive process state
         using TPS = Field<DMASR, 3, 20, read_only>;  // Transmit process state
         using EBS = Field<DMASR, 3, 23, read_only>;  // Error bits status
@@ -3109,7 +3109,7 @@ namespace EXTEND
         using ETH_RGMII_EN = Field<EXTEND_CTR, 1, 3, read_write>; // ETH RGMII Enable
         using PLL_HSI_PRE = Field<EXTEND_CTR, 1, 4, read_write>;  // Whether HSI is divided
         using LOCKUP_EN = Field<EXTEND_CTR, 1, 6, read_write>;    // LOCKUP_Eable
-        using LOCKUP_RSTF = Field<EXTEND_CTR, 1, 7, read_only>;        // LOCKUP RESET
+        using LOCKUP_RSTF = Field<EXTEND_CTR, 1, 7, read_only>;   // LOCKUP RESET
         using ULLDO_TRIM = Field<EXTEND_CTR, 2, 8, read_write>;   // ULLDO_TRIM
         using LDO_TRIM = Field<EXTEND_CTR, 2, 10, read_write>;    // LDO_TRIM
         using HSE_KEEP_LP = Field<EXTEND_CTR, 1, 12, read_write>; // HSE_KEEP_LP
@@ -3281,14 +3281,14 @@ namespace GPIOB
     using GPIOB_pack = RegisterPack<0x40010c00, 1024>;
     struct CFGLR : PackedRegister<GPIOB_pack, RegBitSize::b32, 0 * 8> // Port configuration register low
     {
-            using MODE0 = Field<CFGLR, 4, 4 * 0, read_write>;
-            using MODE1 = Field<CFGLR, 4, 4 * 1, read_write>;
-            using MODE2 = Field<CFGLR, 4, 4 * 2, read_write>;
-            using MODE3 = Field<CFGLR, 4, 4 * 3, read_write>;
-            using MODE4 = Field<CFGLR, 4, 4 * 4, read_write>;
-            using MODE5 = Field<CFGLR, 4, 4 * 5, read_write>;
-            using MODE6 = Field<CFGLR, 4, 4 * 6, read_write>;
-            using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;
+        using MODE0 = Field<CFGLR, 4, 4 * 0, read_write>;
+        using MODE1 = Field<CFGLR, 4, 4 * 1, read_write>;
+        using MODE2 = Field<CFGLR, 4, 4 * 2, read_write>;
+        using MODE3 = Field<CFGLR, 4, 4 * 3, read_write>;
+        using MODE4 = Field<CFGLR, 4, 4 * 4, read_write>;
+        using MODE5 = Field<CFGLR, 4, 4 * 5, read_write>;
+        using MODE6 = Field<CFGLR, 4, 4 * 6, read_write>;
+        using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;
     };
     struct CFGHR : PackedRegister<GPIOB_pack, RegBitSize::b32, 4 * 8> // Port configuration register high
     {
@@ -3426,17 +3426,19 @@ namespace GPIOC
         using MODE4 = Field<CFGLR, 4, 4 * 4, read_write>;
         using MODE5 = Field<CFGLR, 4, 4 * 5, read_write>;
         using MODE6 = Field<CFGLR, 4, 4 * 6, read_write>;
-        using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;    };
+        using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;
+    };
     struct CFGHR : PackedRegister<GPIOC_pack, RegBitSize::b32, 4 * 8> // Port configuration register high
     {
-         using MODE8 = Field<CFGHR, 4, 4 * 8, read_write>;
+        using MODE8 = Field<CFGHR, 4, 4 * 8, read_write>;
         using MODE9 = Field<CFGHR, 4, 4 * 9, read_write>;
         using MODE10 = Field<CFGHR, 4, 4 * 10, read_write>;
         using MODE11 = Field<CFGHR, 4, 4 * 11, read_write>;
         using MODE12 = Field<CFGHR, 4, 4 * 12, read_write>;
         using MODE13 = Field<CFGHR, 4, 4 * 13, read_write>;
         using MODE14 = Field<CFGHR, 4, 4 * 14, read_write>;
-        using MODE15 = Field<CFGHR, 4, 4 * 15, read_write>;   };
+        using MODE15 = Field<CFGHR, 4, 4 * 15, read_write>;
+    };
     struct INDR : PackedRegister<GPIOC_pack, RegBitSize::b32, 8 * 8> // Port input data register
     {
         using IDR0 = Field<INDR, 1, 0, read_only>;   // Port input data
@@ -3562,7 +3564,8 @@ namespace GPIOD
         using MODE4 = Field<CFGLR, 4, 4 * 4, read_write>;
         using MODE5 = Field<CFGLR, 4, 4 * 5, read_write>;
         using MODE6 = Field<CFGLR, 4, 4 * 6, read_write>;
-        using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;    };
+        using MODE7 = Field<CFGLR, 4, 4 * 7, read_write>;
+    };
     struct CFGHR : PackedRegister<GPIOD_pack, RegBitSize::b32, 4 * 8> // Port configuration register high
     {
         using MODE8 = Field<CFGHR, 4, 4 * 8, read_write>;
@@ -8023,8 +8026,8 @@ namespace USB_OTG_FS
         using USBHD_UH_PORT_EN__USBHD_UD_PORT_EN = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 0, read_write>;     // enable USB port: 0=disable, 1=enable port, automatic disabled if USB device detached
         using USBHD_UH_BUS_RESET__USBHD_UD_GP_BIT = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 1, read_write>;    // force clear FIFO and count of USB
         using USBHD_UH_LOW_SPEED__USBHD_UD_LOW_SPEED = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 2, read_write>; // enable USB port low speed: 0=full speed, 1=low speed
-        using USBHD_UH_DM_PIN__USBHD_UD_DM_PIN = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 4, read_only>;             // ReadOnly: indicate current UDM pin level
-        using USBHD_UH_DP_PIN__USBHD_UD_DP_PIN = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 5, read_only>;             // USB device enable and internal pullup resistance enable
+        using USBHD_UH_DM_PIN__USBHD_UD_DM_PIN = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 4, read_only>;        // ReadOnly: indicate current UDM pin level
+        using USBHD_UH_DP_PIN__USBHD_UD_DP_PIN = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 5, read_only>;        // USB device enable and internal pullup resistance enable
         using USBHD_UH_PD_DIS__USBHD_UD_PD_DIS = Field<USBHD_UDEV_CTRL__USBHD_UHOST_CTRL, 1, 7, read_write>;       // disable USB UDP/UDM pulldown resistance: 0=enable pulldown, 1=disable
     };
     struct R8_USB_INT_EN : PackedRegister<USB_OTG_FS_pack, RegBitSize::b8, 2 * 8> // USB interrupt enable
@@ -9270,43 +9273,47 @@ namespace Clock
     static inline void init(bool pll)
     {
         PFIC::STK_CTLR::merge_write<PFIC::STK_CTLR::STE, 1>()
-                              .with<PFIC::STK_CTLR::STCLK, 1>()
-                              .done();
+            .with<PFIC::STK_CTLR::STCLK, 1>()
+            .done();
         if (pll)
         {
-        RCC::CFGR0::merge_write<RCC::CFGR0::SW, 0>()
-                          .with<RCC::CFGR0::HPRE, 0>()
-                          .with<RCC::CFGR0::PPRE1, 0>()
-                          .with<RCC::CFGR0::PPRE2, 0>()
-                          .with<RCC::CFGR0::ADCPRE, 0>()
-                          .with<RCC::CFGR0::PLLSRC, 0>() /* 0: HSI */
-                          .with<RCC::CFGR0::PLLXTPRE, 0>()
-                          .with<RCC::CFGR0::PLLMUL, 0b1111>() /* x18 -> 144 MHz */
-                          .with<RCC::CFGR0::USBPRE, 0b10>() // 144 MHz -> 48 MHz USB
-                          .done();
+            EXTEND::EXTEND_CTR::PLL_HSI_PRE::write<1>(); // HSI undivided -> PLL
+
+            RCC::CFGR0::merge_write<RCC::CFGR0::SW, 0>()
+                .with<RCC::CFGR0::HPRE, 0>()
+                .with<RCC::CFGR0::PPRE1, 0>()
+                .with<RCC::CFGR0::PPRE2, 0>()
+                .with<RCC::CFGR0::ADCPRE, 0>()
+                .with<RCC::CFGR0::PLLSRC, 0>() /* 0: HSI */
+                .with<RCC::CFGR0::PLLXTPRE, 0>()
+                .with<RCC::CFGR0::PLLMUL, 0b1111>() /* x18 -> 144 MHz */
+                .with<RCC::CFGR0::USBPRE, 0b10>()   // 144 MHz -> 48 MHz USB
+                .done();
             RCC::CTLR::merge_write<RCC::CTLR::HSION, 1>()
-                             .with<RCC::CTLR::HSITRIM, 0x10>()
-                             .with<RCC::CTLR::HSEON, 0>()
-                             .with<RCC::CTLR::PLLON, 1>()
-                             .done();
+                .with<RCC::CTLR::HSITRIM, 0x10>()
+                .with<RCC::CTLR::HSEON, 0>()
+                .with<RCC::CTLR::PLLON, 1>()
+                .done();
             RCC::INTR::merge_write<RCC::INTR::LSIRDYC, 1>()
-                             .with<RCC::INTR::HSERDYC, 1>()
-                             .with<RCC::INTR::HSIRDYC, 1>()
-                             .with<RCC::INTR::HSERDYC, 1>()
-                             .with<RCC::INTR::PLLRDYC, 1>()
-                             .with<RCC::INTR::CSSC, 1>()
-                             .done();
-            while (RCC::CTLR::PLLRDY::read() == 0);
+                .with<RCC::INTR::HSERDYC, 1>()
+                .with<RCC::INTR::HSIRDYC, 1>()
+                .with<RCC::INTR::HSERDYC, 1>()
+                .with<RCC::INTR::PLLRDYC, 1>()
+                .with<RCC::INTR::CSSC, 1>()
+                .done();
+            while (RCC::CTLR::PLLRDY::read() == 0)
+                ;
             RCC::CFGR0::SW::write<0b10>();
-            while (RCC::CFGR0::SWS::read() != 0b10);
+            while (RCC::CFGR0::SWS::read() != 0b10)
+                ;
             ticksPerUs = 144;
         }
         else
         {
             RCC::CTLR::merge_write<RCC::CTLR::HSION, 1>()
-                             .with<RCC::CTLR::HSITRIM, 0x10>()
-                             .with<RCC::CTLR::PLLON, 0>()
-                             .done();
+                .with<RCC::CTLR::HSITRIM, 0x10>()
+                .with<RCC::CTLR::PLLON, 0>()
+                .done();
             ticksPerUs = 8;
         }
     }
@@ -9316,7 +9323,7 @@ namespace Clock
     }
     static inline uint64_t getSystick64()
     {
-        return PFIC::STK_CNTL::CNTL::read() + (((uint64_t)PFIC::STK_CNTH::CNTH::read())<<32);
+        return PFIC::STK_CNTL::CNTL::read() + (((uint64_t)PFIC::STK_CNTH::CNTH::read()) << 32);
     }
     static inline void delayTicks(uint32_t n)
     {
