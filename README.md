@@ -8,3 +8,5 @@ Based on
 
 TODO:
 - c++ startup from [five-embeddeb](https://github.com/five-embeddev/riscv-scratchpad/tree/master/baremetal-startup-cxx/src)
+- blinky
+- usb hid
