@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(src/cppreg build/cppreg)
 
 add_executable(wch_demo 
-    #src/startup_ch32v20x.c
+    src/startup/startup_ch32v20x_D6.S
+    src/core/core_riscv.c
+    src/ch32v20x_it.c
     src/main.cpp
 )
 
@@ -49,7 +51,7 @@ target_link_options(wch_demo PRIVATE
     --specs=nano.specs
     --specs=nosys.specs
     -Wl,--print-memory-usage
-    -T "${CMAKE_SOURCE_DIR}/src/ch32v003/Ld/Link.ld"
+    -T "${CMAKE_SOURCE_DIR}/src/ld/ch32c203c8_wch.ld"
     -Wl,--gc-sections
     -Wl,-Map=wch_demo.map
     -nostartfiles
