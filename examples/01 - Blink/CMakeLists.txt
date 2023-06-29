@@ -52,7 +52,7 @@ target_link_options(wch_demo PRIVATE
     --specs=nano.specs
     --specs=nosys.specs
     -Wl,--print-memory-usage
-    -T "${CMAKE_SOURCE_DIR}/../..//src/ld/ch32c203c8_wch.ld"
+    -T "${CMAKE_SOURCE_DIR}/../../src/ld/ch32v203c8_wch.ld"
     -Wl,--gc-sections
     -Wl,-Map=wch_demo.map
     -nostartfiles

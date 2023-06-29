@@ -341,7 +341,6 @@ RV_STATIC_INLINE void NVIC_SystemReset(void)
 }
 
 
-
 /* Core_Exported_Functions */  
 extern uint32_t __get_MSTATUS(void);
 extern void __set_MSTATUS(uint32_t value);
@@ -368,8 +367,3 @@ extern uint32_t __get_SP(void);
 #endif
 
 #endif
-
-
-
-
-
